@@ -1,5 +1,3 @@
-import static org.gradle.api.artifacts.ResolutionStrategy.*
-
 apply plugin: 'java'
 apply plugin: 'groovy'
 apply plugin: 'maven'
