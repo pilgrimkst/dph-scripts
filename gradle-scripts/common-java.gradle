@@ -2,18 +2,17 @@ apply plugin: 'java'
 apply plugin: 'groovy'
 apply plugin: 'maven'
 
-apply from: "${rootDir}/gradle-scripts/dependencies.gradle"
+apply from: "https://raw.githubusercontent.com/pilgrimkst/dph-scripts/master/gradle-scripts/dependencies.gradle"
 
-apply from: "${rootDir}/gradle-scripts/dph-upload-archives.gradle"
+apply from: "https://raw.githubusercontent.com/pilgrimkst/dph-scripts/master/gradle-scripts/dph-upload-archives.gradle"
 
-apply from: "${rootDir}/gradle-scripts/java-sonar-jacoco.gradle"
+apply from: "https://raw.githubusercontent.com/pilgrimkst/dph-scripts/master/gradle-scripts/java-sonar-jacoco.gradle"
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 compileJava.options.encoding = "UTF-8"
 compileTestJava.options.encoding = "UTF-8"
-
 allprojects {
 
     configurations.all {
