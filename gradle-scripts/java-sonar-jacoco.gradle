@@ -1,0 +1,32 @@
+apply plugin: 'jacoco'
+
+test {
+    jacoco {
+        append = true
+        destinationFile = file("$buildDir/jacoco/test.exec")
+        classDumpFile = file("$buildDir/jacoco/classpathdumps")
+    }
+}
+
+compileJava.dependsOn(processResources)
+
+jacoco {
+    toolVersion = "0.7.6.201602180812"
+    reportsDir = file("$buildDir/jacoco")
+}
+
+sonarqube {
+    properties {
+        property "sonar.sourceEncoding", "UTF-8"
+        property "sonar.sources", "src"
+        property 'sonar.java.binaries', sourceSets.main.runtimeClasspath.filter { it.exists() && it.isDirectory() }
+        property 'sonar.java.libraries', sourceSets.main.runtimeClasspath.filter {
+            it.exists() && !it.isDirectory()
+        }
+
+        // execute JaCoCo before the SonarQube run to have report file ready
+        property 'sonar.java.coveragePlugin', 'jacoco'
+        property 'sonar.jacoco.reportPath', "${buildDir}/jacoco/test.exec"
+        property 'sonar.jacoco.reportMissing.force.zero', true
+    }
+}

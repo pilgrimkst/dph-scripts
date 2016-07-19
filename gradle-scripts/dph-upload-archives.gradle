@@ -1,0 +1,39 @@
+configurations {
+    deployerJars
+}
+
+javadoc {
+    options {
+        encoding = 'UTF-8'
+    }
+}
+
+uploadArchives {
+    dependsOn build
+    repositories.mavenDeployer {
+        configuration = configurations.deployerJars
+        repository(url: project.properties.artifactoryUri) {
+            authentication(
+                    userName: project.properties.artifactoryUser,
+                    password: project.properties.artifactoryPassword
+            )
+        }
+    }
+}
+
+task sourcesJar(type: Jar, dependsOn: classes) {
+    classifier = 'sources'
+    from sourceSets.main.allSource
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+
+artifacts {
+    archives sourcesJar
+    archives javadocJar
+}
+
+uploadArchives.dependsOn(build)

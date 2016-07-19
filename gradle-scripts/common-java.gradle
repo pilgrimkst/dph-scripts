@@ -1,0 +1,45 @@
+apply plugin: 'java'
+apply plugin: 'groovy'
+apply plugin: 'maven'
+
+apply from: "${rootDir}/gradle-scripts/dependencies.gradle"
+
+apply from: "${rootDir}/gradle-scripts/dph-upload-archives.gradle"
+
+apply from: "${rootDir}/gradle-scripts/java-sonar-jacoco.gradle"
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+compileJava.options.encoding = "UTF-8"
+compileTestJava.options.encoding = "UTF-8"
+
+dependencies {
+    compile libraries.slf4j,
+            libraries.logback,
+            libraries.guava,
+            libraries.commonsLang3
+
+    testCompile libraries.groovy,
+            libraries.spock
+}
+
+test {
+
+    outputs.upToDateWhen { false }
+
+    testLogging.showStandardStreams = true
+
+    afterTest { desc, result ->
+        println "[TEST]: [${desc.className}] ${desc.name} => ${result.resultType}"
+    }
+
+}
+
+processResources {
+    filesMatching('**/info.properties') {
+        expand(project.properties)
+    }
+}
+
+compileJava.dependsOn(processResources)

@@ -1,0 +1,26 @@
+apply plugin: 'docker'
+
+task buildDocker(type: Docker, dependsOn: build) {
+
+    def dockerDir = "$projectDir/src/main/docker/"
+
+    push = project.hasProperty('dockerPush')
+    applicationName = project.name
+    tag = "${project.properties.dockerRegistry}/${applicationName}"
+
+    dockerfile = file("$dockerDir/Dockerfile")
+
+    doFirst {
+//        #copy jar artifact to docker build dir
+        copy {
+            from jar
+            into stageDir
+            rename {'application.jar'}
+        }
+//        #copy all resources from docker src dir to docker build dir (configs, templates, anything used during building image)
+        copy {
+            from "$dockerDir"
+            into stageDir
+        }
+    }
+}
