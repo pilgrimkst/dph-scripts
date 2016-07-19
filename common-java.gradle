@@ -2,11 +2,11 @@ apply plugin: 'java'
 apply plugin: 'groovy'
 apply plugin: 'maven'
 
-apply from: "https://raw.githubusercontent.com/pilgrimkst/dph-scripts/master/gradle-scripts/dependencies.gradle"
+apply from: "https://raw.githubusercontent.com/pilgrimkst/dph-scripts/master/dependencies.gradle"
 
-apply from: "https://raw.githubusercontent.com/pilgrimkst/dph-scripts/master/gradle-scripts/dph-upload-archives.gradle"
+apply from: "https://raw.githubusercontent.com/pilgrimkst/dph-scripts/master/dph-upload-archives.gradle"
 
-apply from: "https://raw.githubusercontent.com/pilgrimkst/dph-scripts/master/gradle-scripts/java-sonar-jacoco.gradle"
+apply from: "https://raw.githubusercontent.com/pilgrimkst/dph-scripts/master/java-sonar-jacoco.gradle"
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
