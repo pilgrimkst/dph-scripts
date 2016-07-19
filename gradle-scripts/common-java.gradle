@@ -14,6 +14,26 @@ targetCompatibility = 1.8
 compileJava.options.encoding = "UTF-8"
 compileTestJava.options.encoding = "UTF-8"
 
+allprojects {
+
+    configurations.all {
+        ResolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+    }
+
+    repositories {
+        jcenter()
+        mavenCentral()
+        maven {
+            url project.properties.artifactoryUri
+            artifactUrls[project.properties.artifactoryUri]
+            credentials {
+                username = project.properties.artifactoryUser
+                password = project.properties.artifactoryPassword
+            }
+        }
+    }
+}
+
 dependencies {
     compile libraries.slf4j,
             libraries.logback,
