@@ -1,3 +1,5 @@
+import static org.gradle.api.artifacts.ResolutionStrategy.*
+
 apply plugin: 'java'
 apply plugin: 'groovy'
 apply plugin: 'maven'
@@ -15,9 +17,9 @@ compileJava.options.encoding = "UTF-8"
 compileTestJava.options.encoding = "UTF-8"
 allprojects {
 
-    configurations.all {
-        ResolutionStrategy.cacheChangingModulesFor 0, 'seconds'
-    }
+//    configurations.all {
+//        ResolutionStrategy.cacheChangingModulesFor(0, "seconds")
+//    }
 
     repositories {
         jcenter()
