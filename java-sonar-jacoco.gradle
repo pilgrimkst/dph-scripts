@@ -18,9 +18,10 @@ jacoco {
 sonarqube {
     properties {
         property "sonar.sourceEncoding", "UTF-8"
-        property "sonar.sources", "src"
-//        property 'sonar.java.binaries', sourceSets.main.runtimeClasspath.filter { it.exists() && it.isDirectory() }
-//        property 'sonar.java.libraries', sourceSets.main.runtimeClasspath.filter { it.exists() && !it.isDirectory() }
+        property 'sonar.java.binaries', sourceSets.main.runtimeClasspath.filter { it.exists() && it.isDirectory() }
+        property 'sonar.java.libraries', sourceSets.main.runtimeClasspath.filter { it.exists() && !it.isDirectory() }
+
+        property 'sonar.test', 'src/test/java/**,src/test/groovy/**'
 
         // execute JaCoCo before the SonarQube run to have report file ready
         property 'sonar.java.coveragePlugin', 'jacoco'
