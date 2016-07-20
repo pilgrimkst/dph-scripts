@@ -64,7 +64,7 @@ ext {
                     "com.fasterxml.jackson.datatype:jackson-datatype-joda:${jacksonVersion}",
                     "com.fasterxml.jackson.datatype:jackson-datatype-jsr310:${jacksonVersion}"
             ],
-            reactorBus                 : "io.projectreactor:reactor-bus:2.0.2.RELEASE",
+            reactorBus                 : "io.projectreactor:reactor-bus:2.0.8.RELEASE",
             ametisteMetrics            : [
                     "org.ametiste.metrics:metrics-default-starter:${ametisteMetricsVersion}",
                     "org.ametiste.metrics:metrics-si:${ametisteMetricsVersion}"
