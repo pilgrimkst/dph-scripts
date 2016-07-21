@@ -9,7 +9,7 @@ ext {
     ametisteMetricsVersion = '0.2.0-RELEASE'
     ametisteGdcVersion = '0.1.0-RELEASE'
     dphEnvVersion = '0.2.0-3-RELEASE'
-
+    dphEnvStarterVersion = '0.2.5-b1-RC'
     libraries = [
             //Logging
             slf4j                      : "org.slf4j:slf4j-api:$sl4jVersion",
@@ -69,6 +69,8 @@ ext {
                     "org.ametiste.metrics:metrics-default-starter:${ametisteMetricsVersion}",
                     "org.ametiste.metrics:metrics-si:${ametisteMetricsVersion}"
             ],
+
+            envMonitoringStarter: "com.dph.env:env-starter-default-dashboard:${dphEnvStarterVersion}",
 
             ametisteGdc                : "org.ametiste.gdc:gdc-bootstrap:${ametisteGdcVersion}",
 
