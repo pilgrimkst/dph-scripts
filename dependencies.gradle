@@ -4,12 +4,16 @@ ext {
     guavaVersion = '18.0'
     springBootVersion = '1.3.5.RELEASE'
     springVersion = "4.2.0.RELEASE"
+    springIntegrationHttpVersion = '4.2.5.RELEASE'
     sl4jVersion = '1.7.2'
+    mockitoVersion = '1.10.19'
 
     ametisteMetricsVersion = '0.2.0-RELEASE'
     ametisteGdcVersion = '0.1.0-RELEASE'
     dphEnvVersion = '0.2.0-3-RELEASE'
-    dphEnvStarterVersion = '0.2.5-b1-RC'
+    dphEnvStarterVersion = '0.2.5-b2-RC'
+    dphSearchEventsConverterVersion = '0.1.0-b3-RC'
+
     libraries = [
             //Logging
             slf4j                      : "org.slf4j:slf4j-api:$sl4jVersion",
@@ -38,6 +42,7 @@ ext {
             springIntegrationKafka     : 'org.springframework.integration:spring-integration-kafka:1.2.1.RELEASE',
             springIntegrationIp        : 'org.springframework.integration:spring-integration-ip:4.2.0.RELEASE',
             springIntegrationDsl       : 'org.springframework.integration:spring-integration-java-dsl:1.1.0.RELEASE',
+            springIntegrationHttp      : "org.springframework.integration:spring-integration-http:${springIntegrationHttpVersion}",
 
             springCloudEureka          : 'org.springframework.cloud:spring-cloud-starter-eureka:1.1.2.RELEASE',
             springCloudConfig          : 'org.springframework.cloud:spring-cloud-starter-config:1.1.1.RELEASE',
@@ -86,6 +91,8 @@ ext {
 
             dphHttpEvent               : "com.dph:dph-http-event:0.1.1-b3-RC",
 
+            dphSearchEventsConverter   : "com.dph.events-bus:search-events-converter:${dphSearchEventsConverterVersion}",
+
             eventsBusCommonEnpointApi  : "com.dph.events-bus.common:endpoint-api:0.1.1-b2-RC",
 
             eventsBusCommonEndpointRest: "com.dph.events-bus.common:endpoint-rest-starter:0.1.1-b2-RC",
@@ -111,7 +118,8 @@ ext {
             akka                       : ['com.typesafe.akka:akka-actor_2.11:2.4.2', 'org.scala-lang:scala-library:2.11.7'],
             hibernateValidator         : 'org.hibernate:hibernate-validator:4.2.0.Final',
 
-            jsonassert                 : 'org.skyscreamer:jsonassert:1.3.0'
+            jsonassert                 : 'org.skyscreamer:jsonassert:1.3.0',
 
+            mockito                    : "org.mockito:mockito-all:${mockitoVersion}"
     ]
 }
