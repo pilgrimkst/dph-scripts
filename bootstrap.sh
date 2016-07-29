@@ -28,7 +28,7 @@ mv ./services/_bootstrap_ ./services/${project}-app
 mv ./services/${project}-app/src/main/java/com/dph/_bootstrap_ ./services/${project}-app/src/main/java/com/dph/${project}
 
 echo "settings.gradle"
-sed s/_bootstrap_/${project}-app/g ./settings.gradle
+sed s/_bootstrap_/${project}-app/g ./settings.gradle > ./settings.gradle.extr; mv ./settings.gradle.extr ./settings.gradle
 cat ./settings.gradle
 
 echo "Java classes"
