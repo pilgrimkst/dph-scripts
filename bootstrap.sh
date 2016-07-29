@@ -11,18 +11,18 @@ while [ "$1" != "" ]; do
     shift
 done
 
-export current_dir = pwd
+export current_dir=
 cd /tmp
 
-echo "Fetching project template"
+echo "Fetching project template\n\n"
 
 rm -rf /tmp/project-bootstrap && git clone git@bitbucket.org:depositphotos/project-bootstrap.git && rm -rf /tmp/project-bootstrap/.git
 
-echo "Moving template to working folder ${current_dir}"
+echo "Moving template to working folder ${current_dir}\n\n"
 cd ${current_dir} && mv /tmp/project-bootstrap ${project}
 cd ./${project} && git init && git add . && git remote add origin git@bitbucket.org:depositphotos/${project}.git
 
-echo "Replacing template with ${project}"
+echo "Replacing template with ${project}\n\n"
 echo "folders"
 mv ./services/_bootstrap_ ./services/${project}-app
 mv ./services/${project}-app/src/main/java/com/dph/_bootstrap_ ./services/${project}-app/src/main/java/com/dph/${project}
