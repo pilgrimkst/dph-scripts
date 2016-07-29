@@ -2,8 +2,11 @@
 
 while [ "$1" != "" ]; do
     case $1 in
-        -p | --project )           shift
+        --project )           shift
                                 project=$1
+                                ;;
+        --package )           shift
+                                package=$1
                                 ;;
         * )                     usage
                                 exit 1
@@ -12,6 +15,7 @@ while [ "$1" != "" ]; do
 done
 
 current_dir=$(pwd)
+
 cd /tmp
 
 echo "Fetching project template\n\n"
@@ -25,14 +29,14 @@ cd ./${project} && git init && git add . && git remote add origin git@bitbucket.
 echo "Replacing template with ${project}\n\n"
 echo "folders"
 mv ./services/_bootstrap_ ./services/${project}-app
-mv ./services/${project}-app/src/main/java/com/dph/_bootstrap_ ./services/${project}-app/src/main/java/com/dph/${project}
+mv ./services/${project}-app/src/main/java/com/dph/_bootstrap_ ./services/${project}-app/src/main/java/com/dph/${package}
 
 echo "settings.gradle"
 sed s/_bootstrap_/${project}-app/g ./settings.gradle > ./settings.gradle.extr; mv ./settings.gradle.extr ./settings.gradle
 cat ./settings.gradle
 
 echo "Java classes"
-find . -name "*.java" | while read fname; do cat $fname |  sed  s/_bootstrap_/${project}/g > ${fname}_tmp; mv ${fname}_tmp $fname; done
+find . -name "*.java" | while read fname; do cat $fname |  sed  s/_bootstrap_/${package}/g > ${fname}_tmp; mv ${fname}_tmp $fname; done
 
 echo "Building project"
 chmod +x ./gradlew
