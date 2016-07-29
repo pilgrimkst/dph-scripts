@@ -23,7 +23,7 @@ mv ./services/_bootstrap_ ./services/${project}-app
 
 mv ./services/${project}-app/src/main/java/com/dph/_bootstrap_ ./services/${project}-app/src/main/java/com/dph/${project}
 
-sed s/_bootstrap_/${project}-app/g settings.gradle
+sed s/_bootstrap_/${project}-app/g ./settings.gradle
 
 find . -name "*.java" | while read fname; do cat $fname |  sed  s/_bootstrap_/${project}/g > ${fname}_tmp; mv ${fname}_tmp $fname; done
 
