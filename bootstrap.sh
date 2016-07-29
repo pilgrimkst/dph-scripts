@@ -11,7 +11,7 @@ while [ "$1" != "" ]; do
     shift
 done
 
-export current_dir=
+current_dir=pwd
 cd /tmp
 
 echo "Fetching project template\n\n"
