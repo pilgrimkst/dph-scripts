@@ -27,5 +27,7 @@ sed s/_bootstrap_/${project}-app/g settings.gradle
 
 find . -name "*.java" | while read fname; do cat $fname |  sed  s/_bootstrap_/${project}/g > ${fname}_tmp; mv ${fname}_tmp $fname; done
 
+./gradlew build
+
 echo ${project}
 
