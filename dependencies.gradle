@@ -75,7 +75,7 @@ ext {
                     "org.ametiste.metrics:metrics-si:${ametisteMetricsVersion}"
             ],
 
-            envMonitoringStarter: "com.dph.env:env-starter-default-dashboard:${dphEnvStarterVersion}",
+            envMonitoringStarter       : "com.dph.env:env-starter-default-dashboard:${dphEnvStarterVersion}",
 
             ametisteGdc                : "org.ametiste.gdc:gdc-bootstrap:${ametisteGdcVersion}",
 
