@@ -102,7 +102,9 @@ ext {
             kafkaUnit                  : 'info.batey.kafka:kafka-unit:0.2',
 
             dphCommonsSpring           : 'com.dph.commons:dph-commons-spring:0.1.0-SNAPSHOT',
+            dphHealthCommon            : "com.dph.health:dph-health-common:0.1.1-SNAPSHOT",
 
+            indluxDb                   : "org.influxdb:influxdb-java:2.2",
             groovy                     : "org.codehaus.groovy:groovy-all:2.4.1",
 
             spock                      : [
