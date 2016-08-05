@@ -56,10 +56,4 @@ test {
 
 }
 
-processResources {
-    filesMatching('**/info.properties') {
-        expand(project.properties)
-    }
-}
-
 compileJava.dependsOn(processResources)

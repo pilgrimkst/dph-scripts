@@ -115,7 +115,6 @@ ext {
             ],
 
             springBootStarterTest      : "org.springframework.boot:spring-boot-starter-test:${springBootVersion}",
-
             jodaTime                   : 'joda-time:joda-time:2.8.2',
             akka                       : ['com.typesafe.akka:akka-actor_2.11:2.4.2', 'org.scala-lang:scala-library:2.11.7'],
             hibernateValidator         : 'org.hibernate:hibernate-validator:4.2.0.Final',
