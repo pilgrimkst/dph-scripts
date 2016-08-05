@@ -30,6 +30,7 @@ allprojects {
                 password = project.properties.artifactoryPassword
             }
         }
+        maven { url 'https://plugins.gradle.org/m2/' }
     }
 }
 
