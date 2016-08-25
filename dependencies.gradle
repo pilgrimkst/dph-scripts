@@ -89,17 +89,17 @@ ext {
             ],
 
             dphEnvTrackerSystem        : "com.dph.env:env-starter-tracker-system:${dphEnvVersion}",
-            eventsMessagingKafka       : "com.dph.events-bus.common:events-messaging-kafka:0.1.0-RELEASE",
+            eventsMessagingKafka       : "com.dph.events-bus.common:events-messaging-kafka:0.1.2-RELEASE",
 
             dphHttpEvent               : "com.dph:dph-http-event:0.1.1-b3-RC",
 
             dphSearchEventsConverter   : "com.dph.events-bus:search-events-converter:${dphSearchEventsConverterVersion}",
 
-            eventsBusCommonEnpointApi  : "com.dph.events-bus.common:endpoint-api:0.1.1-b2-RC",
+            eventsBusCommonEnpointApi  : "com.dph.events-bus.common:endpoint-api:0.1.2-RELEASE",
 
-            eventsBusCommonEndpointRest: "com.dph.events-bus.common:endpoint-rest-starter:0.1.1-b2-RC",
+            eventsBusCommonEndpointRest: "com.dph.events-bus.common:endpoint-rest-starter:0.1.2-RELEASE",
 
-            signalMetricsCounter       : "com.dph.events-bus.common:signal-metrics-counter:0.1.1-SNAPSHOT",
+            signalMetricsCounter       : "com.dph.events-bus.common:signal-metrics-counter:0.1.2-RELEASE",
 
             kafkaUnit                  : 'info.batey.kafka:kafka-unit:0.2',
 
