@@ -99,9 +99,11 @@ ext {
 
             eventsBusCommonEndpointRest: "com.dph.events-bus.common:endpoint-rest-starter:0.1.1-b2-RC",
 
+            signalMetricsCounter       : "com.dph.events-bus.common:signal-metrics-counter:0.1.1-SNAPSHOT",
+
             kafkaUnit                  : 'info.batey.kafka:kafka-unit:0.2',
 
-            dphCommonsSpring           : 'com.dph.commons:dph-commons-spring:0.1.0-SNAPSHOT',
+            dphCommonsSpring           : 'com.dph.commons:dph-commons-spring:0.1.3-RELEASE',
             dphHealthCommon            : "com.dph.health:dph-health-common:0.1.1-SNAPSHOT",
 
             influxDb                   : "org.influxdb:influxdb-java:2.2",
