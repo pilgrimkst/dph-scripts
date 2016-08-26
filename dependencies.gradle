@@ -97,9 +97,9 @@ ext {
 
             eventsBusCommonEnpointApi  : "com.dph.events-bus.common:endpoint-api:0.1.2-RELEASE",
 
-            eventsBusCommonEndpointRest: "com.dph.events-bus.common:endpoint-rest-starter:0.1.3-b3-RC",
+            eventsBusCommonEndpointRest: "com.dph.events-bus.common:endpoint-rest-starter:0.1.3-b4-RC",
 
-            signalMetricsCounter       : "com.dph.events-bus.common:signal-metrics-counter:0.1.2-RELEASE",
+            signalMetricsCounter       : "com.dph.events-bus.common:signal-metrics-counter:0.1.3-b2-RC",
 
             kafkaUnit                  : 'info.batey.kafka:kafka-unit:0.2',
 
